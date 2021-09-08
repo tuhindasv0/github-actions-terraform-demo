@@ -38,7 +38,6 @@ resource "aws_instance" "web" {
 resource "aws_security_group" "web-sg" {
   name        = "${terraform.workspace}-sg"
   description = "Allow TCP/22"
-  vpc_id      = aws_vpc.vpc_master.id
   ingress {
     description = "Allow 22 from our public IP"
     from_port   = 22
