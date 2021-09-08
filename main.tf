@@ -4,7 +4,7 @@ terraform {
       source  = "hashicorp/aws"
       version = "3.26.0"
     }
-    
+
   }
   required_version = "~> 1.0"
 
@@ -36,7 +36,7 @@ resource "aws_instance" "web" {
 }
 
 resource "aws_security_group" "web-sg" {
- name        = "${terraform.workspace}-sg"
+  name        = "${terraform.workspace}-sg"
   description = "Allow TCP/22"
   vpc_id      = aws_vpc.vpc_master.id
   ingress {
